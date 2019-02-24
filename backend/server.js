@@ -17,8 +17,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 app.use('/api', mediaRoute);
-const distDir = __dirname + "/dist/";
-app.use(express.static(distDir));
 
 let port = process.env.PORT || 4000;
 
