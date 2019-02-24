@@ -1,0 +1,24 @@
+<table class="table table-hover table-dark">
+  <thead>
+    <tr class="text-center">
+      <th>Name</th>
+      <th>Format</th>
+      <th>Ort</th>
+      <th class="text-center actions">Aktionen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="!mediaList?.data[0]" class="text-center">
+      <td colspan="4">Hier steht nichts</td>
+    </tr>
+    <tr *ngFor="let media of mediaList?.data"> <!-- guard against undefined error -->
+      <td>{{ media.media_name }}</td>
+      <td>{{ media.media_format }}</td>
+      <td>{{ media.media_location }}</td>
+      <td class="py-2 text-center">
+        <a [routerLink]="['/media/edit', media._id]" class="btn btn-secondary edit-button">Ändern</a>
+        <a [routerLink]="" (click)="deleteMedia(media._id)" class="btn btn-danger delete-button">Löschen</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

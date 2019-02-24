@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/ng2-slim-loading-bar/style.css";
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: black;
+  height: 100%;
+}
+
+.show {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.container{
+  max-width: 100%;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .filter {
+    width: 50%;
+  }
+  .edit-button {
+    margin-bottom: 0.5em;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .edit-button {
+    margin-bottom: 0em;
+    margin-right: 0.5em;
+  }
+  .actions {
+    min-width: 30%;
+  }
+}

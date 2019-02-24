@@ -1,0 +1,66 @@
+<div class="card bg-dark text-light">
+  <div class="card-body">
+    <form [formGroup]="form" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Name</label> <!-- TODO for later: include Book, game or movie here -->
+        <input type="text" class="form-control" minlength="3" placeholder="Pflichtfeld" formControlName="media_name"
+          #media_name>
+      </div>
+      <div
+        *ngIf="form.controls['media_name'].invalid && (form.controls['media_name'].dirty || form.controls['media_name'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="form.controls['media_name'].errors.required">
+          Bitte Namen ausfüllen
+        </div>
+        <div *ngIf="form.controls['media_name'].errors.minlength">
+          Mindestlänge: 3 Zeichen
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Format</label>
+        <select class="form-control custom-select" placeholder="Pflichtfeld" formControlName="media_format" #media_format>
+          <option value="" selected disabled>Format auswählen...</option>
+          <option value="Buch">Buch</option>
+          <option value="Film">Film</option>
+          <option value="Spiel">Spiel</option>
+        </select>
+      </div>
+      <div
+        *ngIf="form.controls['media_format'].invalid && (form.controls['media_format'].dirty || form.controls['media_format'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="form.controls['media_format'].errors.required">
+          Bitte Format auswählen
+        </div>
+        <div *ngIf="form.controls['media_format'].errors.minlength">
+          Mindestlänge: 3 Zeichen
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Ort</label>
+        <input type="text" class="form-control" minlength="3" placeholder="Pflichtfeld" formControlName="media_location"
+          #media_location>
+      </div>
+      <div
+        *ngIf="form.controls['media_location'].invalid && (form.controls['media_location'].dirty || form.controls['media_location'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="form.controls['media_location'].errors.required">
+          Bitte Ort ausfüllen
+        </div>
+        <div *ngIf="form.controls['media_location'].errors.minlength">
+          Mindestlänge: 3 Zeichen
+        </div>
+      </div>
+      <div class="form-group">
+        <button *ngIf="!media" [disabled]="form.pristine || form.invalid" class="btn btn-primary"
+          (click)="addMedia(media_name.value, media_format.value, media_location.value)">
+          Eintrag anlegen
+        </button>
+        <!--TODO for later: change button based on media type  -->
+        <button *ngIf="media" [disabled]="form.pristine || form.invalid" class="btn btn-primary"
+          (click)="updateMedia(media_name.value, media_format.value, media_location.value)">
+          Änderungen Speichern
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
