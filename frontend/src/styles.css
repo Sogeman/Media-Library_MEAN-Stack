@@ -21,6 +21,11 @@ body {
   max-width: 100%;
 }
 
+.input-form {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .edit-svg {
   background: url(assets/edit.svg) no-repeat center;
     background-size: contain;
@@ -39,22 +44,34 @@ body {
     width: 1.5em;
 }
 
+.filter {
+  width: 100%;
+}
 
-@media only screen and (max-width: 768px) {
+.edit-button {
+  margin-bottom: 0em;
+  margin-right: 0.5em;
+}
+
+
+@media only screen and (max-width: 710px) {
+  .edit-button {
+    margin-bottom: 0.5em;
+    margin-right: 0;
+  }
   .filter {
     width: 50%;
   }
-  .edit-button {
-    margin-bottom: 0.5em;
+  .input-form {
+    width: 100%;
   }
 }
 
-@media only screen and (min-width: 769px) {
-  .edit-button {
-    margin-bottom: 0em;
-    margin-right: 0.5em;
-  }
+@media only screen and (min-width: 711px) and (max-width: 992px) {
   .actions {
     min-width: 30%;
+  }
+  .filter {
+    width: 40%;
   }
 }

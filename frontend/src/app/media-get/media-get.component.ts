@@ -38,7 +38,7 @@ export class MediaGetComponent implements OnInit {
   deleteMedia(id: string) {
     this.mediaService.deleteMedia(id)
       .subscribe(() => {
-        this.refreshView();
+        this.refreshFilteredView();
       });
   }
 

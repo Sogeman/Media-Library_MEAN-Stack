@@ -10,7 +10,7 @@ let Media = require('../models/Media');
 
 
 mediaRoutes.get('', (req, res) => {
-    Media.find().exec()
+    Media.find().collation({locale: 'de', strength: 2}).sort({'media_format': 1, 'media_name': 1}).exec()
         .then(media => {
             res.status(200).json({
                 status: 'success',
@@ -47,7 +47,7 @@ mediaRoutes.get('/media/filter', (req, res) => {
     if (req.query.filter) {
         filter['media_format'] = req.query.filter;
     }
-    Media.find(filter).exec()
+    Media.find(filter).collation({locale: 'de', strength: 2}).sort({'media_name': 1}).exec()
         .then(media => {
             res.status(200).json({
                 status: 'success',
