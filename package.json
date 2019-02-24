@@ -40,6 +40,9 @@
         "rxjs-compat": "^6.4.0",
         "zone.js": "~0.8.26"
     },
+    "engines": {
+        "node": "10.13.0"
+    },
     "devDependencies": {
         "@angular-devkit/build-angular": "^0.13.2",
         "@angular/language-service": "~7.2.5",
