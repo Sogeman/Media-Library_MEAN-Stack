@@ -1,3 +1,5 @@
+db_url = require('./config');
+
 module.exports = {
-    DB: 'mongodb://localhost:27017/medialibrary'
-};
+    DB: db_url
+}; 
