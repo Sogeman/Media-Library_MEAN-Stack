@@ -21,6 +21,24 @@ body {
   max-width: 100%;
 }
 
+.edit-svg {
+  background: url(assets/edit.svg) no-repeat center;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    height: 1em;
+    width: 1.5em;
+}
+
+.delete-svg {
+  background: url(assets/delete.svg) no-repeat center;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    height: 1em;
+    width: 1.5em;
+}
+
 
 @media only screen and (max-width: 768px) {
   .filter {
