@@ -2,7 +2,7 @@
  "name": "Medienbibliothek",
  "short_name": "Medien",
  "description": "Datenbank für die eigenen Bücher, Filme und Spiele",
-"start_url": "/media",
+"start_url": "/",
  "icons": [
   {
    "src": "android-icon-144x144.png",
