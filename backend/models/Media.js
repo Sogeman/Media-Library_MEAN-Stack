@@ -1,5 +1,3 @@
-// TODO for later: schema for books, movies and games
-
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 

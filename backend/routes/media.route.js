@@ -1,5 +1,3 @@
-// TODO for later: separate routes for books, movies and games
-
 const express = require('express');
 const cors = require('cors');
 const app = express();
@@ -10,8 +8,8 @@ let Media = require('../models/Media');
 
 
 mediaRoutes.get('', (req, res) => {
-    Media.find().collation({locale: 'de', strength: 2}).sort({'media_format': 1, 'media_name': 1}).exec()
-        .then(media => {
+    Media.find().collation({locale: 'de', strength: 2}).sort({'media_format': 1, 'media_name': 1}).exec() // collation sorts actually alphabettically
+        .then(media => {                                                                                // sort by format and then by name
             res.status(200).json({
                 status: 'success',
                 data: media
