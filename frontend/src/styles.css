@@ -7,15 +7,14 @@ html {
 body {
   background-color: black;
   height: 100%;
-  font-size: 0.8rem;
 }
 
 .show {
-  visibility: visible;
+  display: block;
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 
 .container{
@@ -55,8 +54,10 @@ body {
   margin-right: 0.5em;
 }
 
-
 @media only screen and (max-width: 710px) {
+  body {
+    font-size: 0.8rem;
+  }
   .edit-button {
     margin-bottom: 0.5em;
     margin-right: 0;

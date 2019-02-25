@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MediaService } from './media.service';
 import { FilterComponent } from './filter/filter.component';
 import { FormsModule } from '@angular/forms';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
    declarations: [
@@ -28,7 +29,8 @@ import { FormsModule } from '@angular/forms';
       FormsModule
    ],
    providers: [
-      MediaService
+      MediaService,
+      {provide: LocationStrategy, useClass: HashLocationStrategy} // so reload works on xampp
    ],
    bootstrap: [
       AppComponent

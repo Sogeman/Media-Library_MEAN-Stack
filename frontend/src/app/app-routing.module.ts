@@ -5,11 +5,6 @@ import { MediaGetComponent } from './media-get/media-get.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: '/media',
-    pathMatch: 'full'
-  },
-  {
     path: 'media/create',
     component: MediaInputComponent
   },
@@ -20,6 +15,11 @@ const routes: Routes = [
   {
     path: 'media',
     component: MediaGetComponent
+  },
+  {
+    path: '',
+    redirectTo: '/media',
+    pathMatch: 'full'
   }
 ];
 

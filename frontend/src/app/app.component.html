@@ -18,7 +18,7 @@
       </a>
     </li>
   </ul>
-  <app-filter class="nav-item" [class.show]="location === '/media'" [class.hidden]="location !== '/media'"
+  <app-filter class="nav-item" [class.show]="location === '/media' || location === '/'" [class.hidden]="location === '/media/create'"
     (location)="location = $event"></app-filter>
   </div>
 </nav>

@@ -19,7 +19,8 @@ export class FilterComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   saveValue(value: string) {
     this.filter.setParams(value); // sets value in filter service
