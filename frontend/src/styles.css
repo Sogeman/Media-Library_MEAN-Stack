@@ -27,6 +27,14 @@ body {
   margin: 0 auto;
 }
 
+.edit-button {
+  margin-right: 0.25em;
+}
+
+.delete-button {
+  margin-left: 0.25em;
+}
+
 .edit-svg {
   background: url(assets/edit.svg) no-repeat center;
     background-size: contain;
@@ -59,8 +67,10 @@ body {
     font-size: 0.8rem;
   }
   .edit-button {
-    margin-bottom: 0.5em;
     margin-right: 0;
+  }
+  .delete-button {
+    margin-left: 0;
   }
   .filter {
     width: 50%;
@@ -71,10 +81,13 @@ body {
 }
 
 @media only screen and (min-width: 711px) and (max-width: 992px) {
-  .actions {
-    min-width: 30%;
-  }
   .filter {
     width: 40%;
+  }
+  .edit-button {
+    margin-right: 0.25em;
+  }
+  .delete-button {
+    margin-left: 0.25em;
   }
 }
