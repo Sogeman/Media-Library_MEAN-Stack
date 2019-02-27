@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
 import { SearchComponent } from './search/search.component';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+
 
 @NgModule({
    declarations: [
@@ -22,7 +24,8 @@ import { SearchComponent } from './search/search.component';
       MediaGetComponent,
       FilterComponent,
       DeleteConfirmationComponent,
-      SearchComponent
+      SearchComponent,
+      LoadingSpinnerComponent
    ],
    imports: [
       BrowserModule,

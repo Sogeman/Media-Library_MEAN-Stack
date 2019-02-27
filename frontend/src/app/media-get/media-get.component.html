@@ -1,27 +1,29 @@
+<app-loading-spinner *ngIf="!mediaList"></app-loading-spinner>
+
 <table class="table table-hover table-dark">
   <thead>
     <tr class="text-center">
       <th>Name</th>
       <th>Format</th>
       <th>Ort</th>
-      <th class="text-center actions">Aktionen</th>
+      <th class="text-center">Aktionen</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngIf="!mediaList?.data[0]" class="text-center">
       <td colspan="4">Hier steht nichts</td>
     </tr>
-    <tr *ngFor="let media of mediaList?.data"> <!-- guard against undefined error -->
+    <tr *ngFor="let media of mediaList?.data" class="media-table-row"> <!-- guard against undefined error -->
       <td>{{ media.media_name }}</td>
       <td>{{ media.media_format }}</td>
       <td>{{ media.media_location }}</td>
       <td class="py-2 text-center actions">
-        <a [routerLink]="['/media/edit', media._id]" class="btn btn-info edit-button">
+        <button type="button" [routerLink]="['/media/edit', media._id]" class="btn btn-info edit-button">
           <span class="edit-svg"></span>
-        </a>
-        <a [routerLink]="" (click)="startDeleteMedia(media._id)" class="btn btn-danger delete-button">
+        </button>
+        <button type="button" [routerLink]="" (click)="startDeleteMedia(media._id)" class="btn btn-danger delete-button">
             <span class="delete-svg"></span>
-        </a>
+        </button>
       </td>
     </tr>
   </tbody>
