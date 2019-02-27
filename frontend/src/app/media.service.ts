@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { MediaList, Media } from './media';
 
 @Injectable({
@@ -34,5 +34,12 @@ export class MediaService {
 
   deleteMedia(id: string): Observable<any> {
     return this.httpClient.delete(`${this.uri}/${id}`);
+  }
+
+  getSearchResults(term: string): Observable<MediaList> {
+    if (!term.trim()) { // if empty, return all
+      return this.getAllMedia();
+    }
+    return this.httpClient.get<MediaList>(`${this.uri}/media/search?name=${term}`);
   }
 }
