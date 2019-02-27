@@ -6,14 +6,20 @@ import { Subject } from 'rxjs';
 })
 export class FilterService {
 
-  private filterType = new Subject<any>();
+  private filterType = new Subject<string>();
+  private searchTerm = new Subject<string>();
 
   constructor() { }
 
-  filter = this.filterType.asObservable(); // exposes the filtertype as Observable
+  filter = this.filterType.asObservable(); // exposes as Observable
+  search = this.searchTerm.asObservable();
 
-  setParams(type: string) {
+  setFilter(type: string) {
     this.filterType.next(type);
+  }
+
+  setSearch(term: string) {
+    this.searchTerm.next(term);
   }
 
 }

@@ -23,7 +23,7 @@ export class FilterComponent implements OnInit {
   }
 
   saveValue(value: string) {
-    this.filter.setParams(value); // sets value in filter service
+    this.filter.setFilter(value); // sets value in filter service
   }
 
 }

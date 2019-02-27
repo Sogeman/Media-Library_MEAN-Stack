@@ -12,13 +12,17 @@ import { MediaService } from './media.service';
 import { FilterComponent } from './filter/filter.component';
 import { FormsModule } from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
    declarations: [
       AppComponent,
       MediaInputComponent,
       MediaGetComponent,
-      FilterComponent
+      FilterComponent,
+      DeleteConfirmationComponent,
+      SearchComponent
    ],
    imports: [
       BrowserModule,

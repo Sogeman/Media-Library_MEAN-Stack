@@ -60,6 +60,26 @@ mediaRoutes.get('/media/filter', (req, res) => {
         });
 });
 
+mediaRoutes.get('/media/search', (req, res) => {
+    let filter = {};
+    if (req.query.name) {
+        filter['media_name'] = new RegExp(req.query.name, "i");
+    }
+    Media.find(filter).collation({locale: 'de', strength: 2}).sort({'media_name': 1}).exec()
+        .then(media => {
+            res.status(200).json({
+                status: 'success',
+                data: media
+            });
+        })
+        .catch(err => {
+            res.status(405).json({
+                status: 'error',
+                data: err.message
+            });
+        });
+});
+
 mediaRoutes.post('/add', (req, res) => {
     let media = new Media(req.body);
     media.save()

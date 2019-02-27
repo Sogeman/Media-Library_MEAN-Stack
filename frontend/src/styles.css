@@ -1,5 +1,4 @@
 @import "../node_modules/ng2-slim-loading-bar/style.css";
-
 html {
   height: 100%;
 }
@@ -17,7 +16,7 @@ body {
   display: none;
 }
 
-.container{
+.container {
   max-width: 100%;
   padding: 0;
 }
@@ -27,67 +26,78 @@ body {
   margin: 0 auto;
 }
 
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 .edit-button {
-  margin-right: 0.25em;
+  margin-right: 0.20em;
 }
 
 .delete-button {
-  margin-left: 0.25em;
+  margin-left: 0.20em;
+}
+
+.filter {
+  width: 15em;
+}
+.search-box {
+  width: 20em;
+}
+.filter, .search-box {
+  margin-left: 1em;
 }
 
 .edit-svg {
   background: url(assets/edit.svg) no-repeat center;
-    background-size: contain;
-    cursor: pointer;
-    display: inline-block;
-    height: 1em;
-    width: 1em;
+  background-size: contain;
+  cursor: pointer;
+  display: inline-block;
+  height: 1em;
+  width: 1em;
 }
 
 .delete-svg {
   background: url(assets/delete.svg) no-repeat center;
-    background-size: contain;
-    cursor: pointer;
-    display: inline-block;
-    height: 1em;
-    width: 1em;
+  background-size: contain;
+  cursor: pointer;
+  display: inline-block;
+  height: 1em;
+  width: 1em;
 }
 
-.filter {
-  width: 100%;
+.delete-confirmation-blackout {
+  position: fixed;
+  top: 35vh;
+  text-align: center;
+  height: 9em;
+  width: 100vw;
+  background-color: rgba(29, 40, 44, 0.95);
+  color: white;
+  padding: 2em;
 }
 
-.edit-button {
-  margin-bottom: 0em;
-  margin-right: 0.5em;
+.confirm-button, .cancel-button {
+  margin: 0 1em;
+  min-width: 55px;
 }
 
-@media only screen and (max-width: 710px) {
+@media only screen and (max-width: 700px) {
   body {
     font-size: 0.8rem;
   }
-  .edit-button {
-    margin-right: 0;
-  }
-  .delete-button {
-    margin-left: 0;
-  }
-  .filter {
-    width: 50%;
+  .filter, .search-box {
+    width: 18em;
+    margin-left: unset;
+    margin-top: 1em;
   }
   .input-form {
     width: 100%;
   }
+  .delete-confirmation-blackout {
+    height: 10em;
+  }
 }
 
-@media only screen and (min-width: 711px) and (max-width: 992px) {
-  .filter {
-    width: 40%;
-  }
-  .edit-button {
-    margin-right: 0.25em;
-  }
-  .delete-button {
-    margin-left: 0.25em;
-  }
-}

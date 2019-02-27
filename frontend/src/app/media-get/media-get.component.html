@@ -15,14 +15,17 @@
       <td>{{ media.media_name }}</td>
       <td>{{ media.media_format }}</td>
       <td>{{ media.media_location }}</td>
-      <td class="py-2 text-center">
+      <td class="py-2 text-center actions">
         <a [routerLink]="['/media/edit', media._id]" class="btn btn-info edit-button">
           <span class="edit-svg"></span>
         </a>
-        <a [routerLink]="" (click)="deleteMedia(media._id)" class="btn btn-danger delete-button">
+        <a [routerLink]="" (click)="startDeleteMedia(media._id)" class="btn btn-danger delete-button">
             <span class="delete-svg"></span>
         </a>
       </td>
     </tr>
   </tbody>
 </table>
+
+<app-delete-confirmation *ngIf="confirmationBox" (delete)="deleteMedia(mediaId)" (cancel)="confirmationBox = !confirmationBox"></app-delete-confirmation>
+
