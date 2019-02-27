@@ -2,4 +2,4 @@ Media Library using the MEAN stack
 
 You can: Create, update, delete, filter by format and search for name
 
-maybe in the future: authentication
+maybe in the future: authentication, need to learn how first
