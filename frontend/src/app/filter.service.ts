@@ -11,7 +11,7 @@ export class FilterService {
 
   constructor() { }
 
-  filter = this.filterType.asObservable(); // exposes as Observable
+  filter = this.filterType.asObservable(); // hides filterType and exposes as Observable
   search = this.searchTerm.asObservable();
 
   setFilter(type: string) {
