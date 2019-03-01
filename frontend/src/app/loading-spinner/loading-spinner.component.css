@@ -4,8 +4,9 @@
   position: relative;
   width: 64px;
   height: 64px;
-  left: 48%;
+  left: 50%;
   top: 45%;
+  transform: translate(-50%,-50%);
 
 }
 .lds-spinner div {
@@ -80,8 +81,4 @@
   }
 }
 
-@media only screen and (max-width: 801px) {
-  .lds-spinner {
-    left: 44%;
-  }
-}
+
