@@ -8,7 +8,7 @@ import { MediaList, Media } from './media';
 })
 export class MediaService {
 
-  uri = 'https://medien-backend.herokuapp.com/api';
+  uri = '';
 
   constructor(private httpClient: HttpClient) { }
 
