@@ -8,7 +8,7 @@ import { MediaList, Media } from './media';
 })
 export class MediaService {
 
-  uri = '';
+  uri = ''; // add backend url here
 
   constructor(private httpClient: HttpClient) { }
 
