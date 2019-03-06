@@ -38,7 +38,7 @@ app-loading-spinner {
 }
 
 .container {
-  max-width: 100%;
+  max-width: 90%;
   padding: 0;
 }
 
@@ -118,6 +118,9 @@ app-loading-spinner {
   body {
     font-size: 0.8rem;
   }
+  .container {
+  max-width: 100%;
+  }
   app-loading-spinner {
     top: 5em;
   }
@@ -152,11 +155,17 @@ app-loading-spinner {
     margin-left: unset;
     margin-top: 1em;
   }
+  .container {
+  max-width: 100%;
+  }
 }
 
 @media only screen and (min-width: 992px) {
   .add-button {
     display: none;
+  }
+  .container {
+  max-width: 100%;
   }
 }
 
