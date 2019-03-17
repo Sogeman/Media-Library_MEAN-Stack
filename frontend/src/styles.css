@@ -119,7 +119,7 @@ app-loading-spinner {
     font-size: 0.8rem;
   }
   .container {
-  max-width: 100%;
+    max-width: 100%;
   }
   app-loading-spinner {
     top: 5em;
