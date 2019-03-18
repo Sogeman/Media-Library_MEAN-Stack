@@ -137,6 +137,7 @@ app-loading-spinner {
   }
   .actions {
     display: block;
+    margin-top: 0.75em;
   }
   .edit-button, .delete-button {
     margin: 0;
@@ -156,7 +157,10 @@ app-loading-spinner {
     margin-top: 1em;
   }
   .container {
-  max-width: 100%;
+    max-width: 100%;
+  }
+  .actions {
+    margin-top: 0.75em;
   }
 }
 
