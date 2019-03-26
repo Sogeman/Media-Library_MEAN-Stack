@@ -1,9 +1,16 @@
 @import "../node_modules/ng2-slim-loading-bar/style.css";
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.column-1 {
+  width: 8.33333%;
+}
+
+.column-2 {
+  width: 16.66667%;
 }
 
 html {
@@ -53,7 +60,7 @@ app-loading-spinner {
   justify-content: space-evenly;
 }
 
-.media-table-row > td {
+.media-table-row>td {
   border-top: none;
   vertical-align: middle;
 }
@@ -73,9 +80,11 @@ app-loading-spinner {
 .filter {
   width: 14em;
 }
+
 .search-box {
   width: 17em;
 }
+
 .filter, .search-box {
   margin-left: 1em;
 }
@@ -103,7 +112,7 @@ app-loading-spinner {
   top: 35vh;
   text-align: center;
   height: 9em;
-  width: 100vw;
+  width: 100%;
   background-color: rgba(29, 40, 44, 0.95);
   color: white;
   padding: 2em;
@@ -137,7 +146,6 @@ app-loading-spinner {
   }
   .actions {
     display: block;
-    margin-top: 0.75em;
   }
   .edit-button, .delete-button {
     margin: 0;
@@ -159,17 +167,13 @@ app-loading-spinner {
   .container {
     max-width: 100%;
   }
-  .actions {
-    margin-top: 0.75em;
-  }
 }
 
 @media only screen and (min-width: 992px) {
   .add-button {
     display: none;
   }
-  .container {
-  max-width: 100%;
+  .delete-confirmation-blackout {
+    width: 90%;
   }
 }
-
