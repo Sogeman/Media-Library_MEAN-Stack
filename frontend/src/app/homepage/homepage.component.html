@@ -1,0 +1,5 @@
+<section class="format-button-wrapper">
+  <app-home-format-button *ngFor="let format of formats" [format]='format' class="format-button"
+    (buttonPressed)="buttonPressed($event)">
+  </app-home-format-button>
+</section>
