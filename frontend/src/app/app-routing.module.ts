@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MediaInputComponent } from './media-input/media-input.component';
 import { MediaGetComponent } from './media-get/media-get.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 const routes: Routes = [
   {
@@ -17,8 +18,12 @@ const routes: Routes = [
     component: MediaGetComponent
   },
   {
+    path: 'home',
+    component: HomepageComponent
+  },
+  {
     path: '',
-    redirectTo: '/media',
+    redirectTo: '/home',
     pathMatch: 'full'
   }
 ];

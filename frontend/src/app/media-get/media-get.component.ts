@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MediaService } from '../media.service';
-import { MediaList } from '../media';
+import { MediaList, Media } from '../media';
 import { FilterService } from '../filter.service';
 import { Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
@@ -13,6 +13,7 @@ import { debounceTime } from 'rxjs/operators';
 export class MediaGetComponent implements OnInit, OnDestroy {
 
   mediaList: MediaList;
+  filteredList: Media[];
   filterType: string;
   searchTerm: string;
   filter: Subscription;
@@ -24,6 +25,11 @@ export class MediaGetComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.filterType = this.filterService.chosenFormat;
+    this.mediaList = this.loadDataFromLocalStorage();
+    if (this.filterType) {
+      this.mediaList.data = this.mediaList.data.filter(media => media.media_format === this.filterType);
+    }
     this.filter = this.filterService.filter // subs to filtertype of filter service and refreshes the view as filtered when it changes
       .subscribe(filterType => {
         this.filterType = filterType;
@@ -35,7 +41,11 @@ export class MediaGetComponent implements OnInit, OnDestroy {
         this.searchTerm = searchTerm;
         this.refreshSearchedView();
       });
-    this.refreshView();
+    if (!this.filterType) {
+      this.refreshView();
+    } else {
+      this.refreshFilteredView();
+    }
   }
 
   ngOnDestroy() {
@@ -46,7 +56,10 @@ export class MediaGetComponent implements OnInit, OnDestroy {
 
   refreshView() {
     this.mediaService.getAllMedia()
-      .subscribe(list => this.mediaList = list);
+      .subscribe(list => {
+        this.mediaList = list;
+        localStorage.setItem('mediaList', JSON.stringify(list));
+      });
   }
 
   refreshFilteredView() {
@@ -65,6 +78,7 @@ export class MediaGetComponent implements OnInit, OnDestroy {
   }
 
   deleteMedia(id: string) {
+    this.confirmationBox = false;
     this.mediaService.deleteMedia(id)
       .subscribe(() => {
         if (this.filterType === undefined) {
@@ -73,6 +87,10 @@ export class MediaGetComponent implements OnInit, OnDestroy {
           this.refreshFilteredView();
         }
       });
+  }
+
+  loadDataFromLocalStorage() {
+    return this.mediaService.getMediaFromLocalStorage();
   }
 
 }

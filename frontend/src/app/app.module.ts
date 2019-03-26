@@ -15,32 +15,40 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
 import { SearchComponent } from './search/search.component';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { HomeComponent } from './home/home.component';
+import { HomeFormatButtonComponent } from './home-format-button/home-format-button.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 
 @NgModule({
-   declarations: [
-      AppComponent,
-      MediaInputComponent,
-      MediaGetComponent,
-      FilterComponent,
-      DeleteConfirmationComponent,
-      SearchComponent,
-      LoadingSpinnerComponent
-   ],
-   imports: [
-      BrowserModule,
-      AppRoutingModule,
-      SlimLoadingBarModule,
-      ReactiveFormsModule,
-      HttpClientModule,
-      FormsModule
-   ],
-   providers: [
-      MediaService,
-      {provide: LocationStrategy, useClass: HashLocationStrategy} // so reload works on xampp
-   ],
-   bootstrap: [
-      AppComponent
-   ]
+  declarations: [
+    AppComponent,
+    MediaInputComponent,
+    MediaGetComponent,
+    FilterComponent,
+    DeleteConfirmationComponent,
+    SearchComponent,
+    LoadingSpinnerComponent,
+    HomeComponent,
+    HomeFormatButtonComponent,
+    HomepageComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SlimLoadingBarModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule
+  ],
+  providers: [
+    MediaService,
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
+
+// { provide: LocationStrategy, useClass: HashLocationStrategy }

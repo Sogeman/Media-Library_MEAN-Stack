@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MediaService } from '../media.service';
-import { ActivatedRoute, Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MediaList, Media } from '../media';
 
 @Component({
@@ -14,7 +14,9 @@ export class MediaInputComponent implements OnInit {
   media: MediaList;
   id: string;
   form: FormGroup;
+
   constructor(private formBuilder: FormBuilder, private mediaService: MediaService, private route: ActivatedRoute, private router: Router) {
+
   }
 
   ngOnInit() {
@@ -37,7 +39,7 @@ export class MediaInputComponent implements OnInit {
     });
   }
 
-  prefillForm(media: Media) {
+  prefillForm(media: any) { // type any because I couldn't get it to play nice with my interface, worked but would give me errors
     this.form.get('media_name').setValue(media.media_name);
     this.form.get('media_format').setValue(media.media_format);
     this.form.get('media_location').setValue(media.media_location);
@@ -54,7 +56,9 @@ export class MediaInputComponent implements OnInit {
 
   updateMedia(media_name: string, media_format: string, media_location: string) {
     this.mediaService.updateMedia(this.createMediaObject(media_name, media_format, media_location), this.id)
-      .subscribe(() => this.router.navigate(['/media']));
+      .subscribe(() => {
+        this.router.navigate(['/media']);
+      });
   }
 
   createMediaObject(media_name: string, media_format: string, media_location: string): Media {

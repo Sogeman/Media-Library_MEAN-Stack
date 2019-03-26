@@ -3,17 +3,18 @@
 <table class="table table-hover table-dark">
   <thead>
     <tr class="text-center">
-      <th class="col-2">Name</th>
-      <th class="col-1">Format</th>
+      <th class="column-2">Name</th>
+      <th class="column-1">Format</th>
       <th>Ort</th>
-      <th class="text-center col-1">Aktionen</th>
+      <th class="text-center column-1"></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngIf="!mediaList?.data[0]" class="text-center">
       <td colspan="4">Hier steht nichts</td>
     </tr>
-    <tr *ngFor="let media of mediaList?.data" class="media-table-row"> <!-- guard against undefined error -->
+    <tr *ngFor="let media of mediaList?.data" class="media-table-row">
+      <!-- guard against undefined error -->
       <td>{{ media.media_name }}</td>
       <td>{{ media.media_format }}</td>
       <td>{{ media.media_location }}</td>
@@ -21,13 +22,14 @@
         <button type="button" [routerLink]="['/media/edit', media._id]" class="btn btn-info edit-button">
           <span class="edit-svg"></span>
         </button>
-        <button type="button" [routerLink]="" (click)="startDeleteMedia(media._id)" class="btn btn-danger delete-button">
-            <span class="delete-svg"></span>
+        <button type="button" [routerLink]="" (click)="startDeleteMedia(media._id)"
+          class="btn btn-danger delete-button">
+          <span class="delete-svg"></span>
         </button>
       </td>
     </tr>
   </tbody>
 </table>
 
-<app-delete-confirmation *ngIf="confirmationBox" (delete)="deleteMedia(mediaId)" (cancel)="confirmationBox = !confirmationBox"></app-delete-confirmation>
-
+<app-delete-confirmation *ngIf="confirmationBox" (delete)="deleteMedia(mediaId)"
+  (cancel)="confirmationBox = !confirmationBox"></app-delete-confirmation>

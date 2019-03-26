@@ -18,7 +18,8 @@
       </div>
       <div class="form-group">
         <label class="col-md-4">Format</label>
-        <select class="form-control custom-select" placeholder="Pflichtfeld" formControlName="media_format" #media_format>
+        <select class="form-control custom-select" placeholder="Pflichtfeld" formControlName="media_format"
+          #media_format>
           <option value="" selected disabled>Format auswählen...</option>
           <option value="Buch">Buch</option>
           <option value="Film">Film</option>
@@ -55,7 +56,6 @@
           (click)="addMedia(media_name.value, media_format.value, media_location.value)">
           Eintrag anlegen
         </button>
-        <!--TODO for later: change button based on media type  -->
         <button *ngIf="media" [disabled]="form.pristine || form.invalid" class="btn btn-primary"
           (click)="updateMedia(media_name.value, media_format.value, media_location.value)">
           Änderungen Speichern

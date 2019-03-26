@@ -1,6 +1,6 @@
 export interface MediaList {
   status: 'success';
-  data: Media;
+  data: Media[];
 }
 
 export interface Media {
@@ -9,4 +9,5 @@ export interface Media {
   media_location: String;
   _id?: String;
 }
+
 
