@@ -28,5 +28,8 @@ export class HomepageComponent implements OnInit {
     this.filter.chosenFormat = format;
   }
 
-  // get all media and save into local storage
+  // get all media and save into local storage and service
+  // on load of homepage, retrieve from service or local storage, also reset filter (maybe not necessary because it's display none)
+  // on delete and edit update both with new server data
+  // on load of library fetch from service or local storage
 }
