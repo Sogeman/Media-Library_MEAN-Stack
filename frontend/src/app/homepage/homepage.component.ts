@@ -28,4 +28,5 @@ export class HomepageComponent implements OnInit {
     this.filter.chosenFormat = format;
   }
 
+  // get all media and save into local storage
 }
