@@ -39,7 +39,7 @@
   background: linear-gradient(to bottom, #b34332 5%, #a73f2d 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b34332', endColorstr='#a73f2d', GradientType=0);
   background-color: #b34332;
-  border: 3px solid grey;
+  border: 3px solid lightgray;
 }
 
 .format-selection-button:active {
