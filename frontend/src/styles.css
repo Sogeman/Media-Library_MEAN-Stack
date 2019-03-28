@@ -93,6 +93,9 @@ app-loading-spinner {
 .search-box {
   width: 17em;
 }
+.search-box:focus {
+  width: 25em
+}
 
 .filter, .search-box {
   margin-left: 1em;
@@ -147,6 +150,9 @@ app-loading-spinner {
     margin-left: unset;
     margin-top: 1em;
   }
+  .search-box:focus {
+    width: 16rem;
+  }
   .input-form {
     width: 100%;
   }
@@ -172,6 +178,9 @@ app-loading-spinner {
     width: 18rem;
     margin-left: unset;
     margin-top: 1em;
+  }
+  .search-box:focus {
+    width: 25rem;
   }
   .container {
     max-width: 100%;
