@@ -44,6 +44,15 @@ app-loading-spinner {
   z-index: 300;
 }
 
+.home-button {
+  background-color: #a73f2d;
+  color: #ffffff;
+}
+.home-button:hover {
+    border: 2px solid lightgray;
+    padding: 5px 11px;
+}
+
 .container {
   max-width: 90%;
   padding: 0;
