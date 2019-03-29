@@ -13,6 +13,10 @@
   width: 16.66667%;
 }
 
+.column-3 {
+  width: 24.99999%;
+}
+
 html {
   height: 100%;
 }
@@ -48,9 +52,10 @@ app-loading-spinner {
   background-color: #a73f2d;
   color: #ffffff;
 }
+
 .home-button:hover {
-    border: 2px solid lightgray;
-    padding: 5px 11px;
+  color: #ffffff;
+  border-color: lightgray;
 }
 
 .container {
@@ -93,6 +98,7 @@ app-loading-spinner {
 .search-box {
   width: 17em;
 }
+
 .search-box:focus {
   width: 25em
 }
@@ -122,6 +128,7 @@ app-loading-spinner {
 .delete-confirmation-blackout {
   position: fixed;
   top: 35vh;
+  left: 0;
   text-align: center;
   height: 9em;
   width: 100%;
@@ -190,8 +197,5 @@ app-loading-spinner {
 @media only screen and (min-width: 992px) {
   .add-button {
     display: none;
-  }
-  .delete-confirmation-blackout {
-    width: 90%;
   }
 }
