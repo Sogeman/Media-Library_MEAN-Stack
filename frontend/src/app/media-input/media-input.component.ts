@@ -51,12 +51,16 @@ export class MediaInputComponent implements OnInit {
 
   addMedia(media_name: string, media_format: string, media_location: string) {
     this.mediaService.addMedia(this.createMediaObject(media_name, media_format, media_location))
-      .subscribe(() => this.clearForm());
+      .subscribe(() => {
+        this.mediaService.refreshLocalMedia();
+        this.clearForm();
+      });
   }
 
   updateMedia(media_name: string, media_format: string, media_location: string) {
     this.mediaService.updateMedia(this.createMediaObject(media_name, media_format, media_location), this.id)
       .subscribe(() => {
+        this.mediaService.refreshLocalMedia();
         this.router.navigate(['/media']);
       });
   }
@@ -68,6 +72,5 @@ export class MediaInputComponent implements OnInit {
       media_location: media_location
     };
   }
-
 
 }
