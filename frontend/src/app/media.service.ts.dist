@@ -42,4 +42,17 @@ export class MediaService {
     }
     return this.httpClient.get<MediaList>(`${this.uri}/media/search?name=${term}`);
   }
+
+  getMediaFromLocalStorage(): MediaList {
+    return JSON.parse(localStorage.getItem('mediaList'));
+  }
+
+  saveMediaToLocalStorage(mediaList: MediaList) {
+    localStorage.setItem('mediaList', JSON.stringify(mediaList));
+  }
+
+  refreshLocalMedia() {
+    this.getAllMedia()
+      .subscribe(mediaList => this.saveMediaToLocalStorage(mediaList));
+  }
 }
