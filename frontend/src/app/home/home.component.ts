@@ -34,6 +34,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (!this.mediaService.getMediaFromLocalStorage) {
+      localStorage.setItem('mediaList', '[]');
+    }
     this.getAllMedia();
   }
 
@@ -41,12 +44,8 @@ export class HomeComponent implements OnInit {
     this.mediaService.getAllMedia()
       .subscribe(list => {
         this.mediaList = list;
-        localStorage.setItem('mediaList', JSON.stringify(list));
+        this.mediaService.saveMediaToLocalStorage(this.mediaList);
       });
-  }
-
-  fetchFromLocalStorage(): MediaList {
-    return this.mediaService.getMediaFromLocalStorage();
   }
 
 
