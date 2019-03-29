@@ -1,9 +1,6 @@
 <form class="filter">
-  <select class="custom-select" (change)="saveValue(type.value)" #type>
-    <option selected disabled value="">Filter</option>
-    <option value="">Alles</option>
-    <option value="Film">Filme</option>
-    <option value="Buch">Bücher</option>
-    <option value="Spiel">Spiele</option>
+  <select class="custom-select" (change)="saveValue(type.value)" [(ngModel)]="selectedOption" name="filter-type" #type>
+    <option selected disabled value="default">Filter</option>
+    <option *ngFor="let option of options" [value]="option.value">{{ option.name }}</option>
   </select>
 </form>
