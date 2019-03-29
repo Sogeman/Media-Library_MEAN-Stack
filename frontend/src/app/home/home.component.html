@@ -6,10 +6,9 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <a class="navbar-brand">
-    <button type="button" class="btn home-button" routerLink="/home"
-      routerLinkActive="active">Home</button>
+    <button type="button" class="btn home-button" routerLink="/home" routerLinkActive="active">Home</button>
   </a>
-  <button type="button" class="btn btn-success add-button" routerLink="/media/create"
+  <button type="button" class="btn btn-outline-success add-button" routerLink="/media/create"
     routerLinkActive="active">+</button>
   <div class="collapse navbar-collapse" id="media-nav">
     <ul class="navbar-nav">
@@ -24,9 +23,11 @@
         </a>
       </li>
     </ul>
-    <app-filter [class.show]="location === '/media'" [class.hidden]="location === '/' || location === '/home' || location === '/media/create'"
+    <app-filter [class.show]="location === '/media'"
+      [class.hidden]="location === '/' || location === '/home' || location === '/media/create'"
       (location)="location = $event"></app-filter>
-    <app-search [class.show]="location === '/media'" [class.hidden]="location === '/' || location === '/home' || location === '/media/create'">
+    <app-search [class.show]="location === '/media'"
+      [class.hidden]="location === '/' || location === '/home' || location === '/media/create'">
     </app-search>
   </div>
 </nav>
