@@ -19,17 +19,20 @@ export class HomepageComponent implements OnInit {
   buttonIsPressed: boolean;
   mediaList: MediaList;
 
-  constructor(private filter: FilterService) { }
+  constructor(private filter: FilterService, private mediaService: MediaService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.getAllMedia();
+  }
 
   buttonPressed(format: string) {
     this.buttonIsPressed = true;
     this.filter.chosenFormat = format;
   }
 
-  // get all media and save into local storage and service
-  // on load of homepage, retrieve from service or local storage, also reset filter (maybe not necessary because it's display none)
-  // on delete and edit update both with new server data
-  // on load of library fetch from service or local storage
+  getAllMedia() {
+    this.mediaList = this.mediaService.getMediaFromLocalStorage();
+    this.mediaService.getAllMedia()
+      .subscribe(list => this.mediaList = list);
+  }
 }

@@ -26,7 +26,7 @@ export class MediaGetComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.filterType = this.filterService.chosenFormat;
-    this.mediaList = this.loadDataFromLocalStorage();
+    this.mediaList = this.mediaService.getMediaFromLocalStorage();
     if (this.filterType) {
       this.mediaList.data = this.mediaList.data.filter(media => media.media_format === this.filterType);
     }
@@ -81,16 +81,13 @@ export class MediaGetComponent implements OnInit, OnDestroy {
     this.confirmationBox = false;
     this.mediaService.deleteMedia(id)
       .subscribe(() => {
+        this.mediaService.refreshLocalMedia();
         if (this.filterType === undefined) {
           this.refreshView();
         } else {
           this.refreshFilteredView();
         }
       });
-  }
-
-  loadDataFromLocalStorage() {
-    return this.mediaService.getMediaFromLocalStorage();
   }
 
 }
